@@ -16,6 +16,12 @@
 {
   <li>@Html.ActionLink($"{client.Name}","Details", new { id = client.ClientId}) | @client.Stylist.Name</li>
 }
-
-<p>@Html.ActionLink("Add a client", "Create")</p>
+@foreach(Stylist stylist in ViewBag.Stylists)
+{
+  @while(stylist != null)
+  @if(stylist != null)
+  {
+    <p>@Html.ActionLink("Add a client", "Create")</p>
+  }
+}
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
